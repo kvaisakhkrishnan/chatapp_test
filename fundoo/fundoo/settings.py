@@ -104,10 +104,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'chatapp',
-        'USER': 'chatapp',
-        'PASSWORD': 'J.YqwX83zz',
-        'HOST': '172.17.9.171',
-        'PORT': '3306',
+        'USER': 'chatapp_user',
+        'PASSWORD': 'Joon@94',
+        'HOST': '10.0.2.206',
+        'PORT' : '3306'
     }
 }
 #sagar kadam
