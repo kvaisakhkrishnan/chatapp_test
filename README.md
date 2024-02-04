@@ -1,1 +1,1 @@
-# Django-Chat-Application-Devops
+# Django-Chat-Application
