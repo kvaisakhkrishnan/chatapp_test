@@ -27,7 +27,7 @@ pipeline{
                 script{
                     sh '''
                         ssh jenkins@172.17.9.142 "sudo systemctl stop chatapp.service"
-                        rsync -avz $WORKSPACE jenkins@172.17.9.172:/tmp/
+                        rsync -avz $WORKSPACE jenkins@172.17.9.142:/tmp/
                         ssh jenkins@172.17.9.142 "sudo -u chatapp /usr/local/bin/cicd.sh"
                         ssh jenkins@172.17.9.142 "sudo systemctl start chatapp.service"
                     '''
