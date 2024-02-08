@@ -26,10 +26,10 @@ pipeline{
             steps{
                 script{
                     sh '''
-                        sudo systemctl stop chatapp.service
+                        ssh jenkins@172.17.9.172 "sudo systemctl stop chatapp.service"
                         rsync -avz $WORKSPACE jenkins@172.17.9.172:/tmp/
                         ssh jenkine@172.17.9.172 "sudo -u chatapp /usr/local/bin/cicd.sh"
-                        sudo systemctl start chatapp.service
+                        ssh jenkins@172.17.9.172 "sudo systemctl start chatapp.service"
                     '''
                 }
             }
