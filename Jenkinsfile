@@ -24,10 +24,14 @@ pipeline{
         }
         stage('Build'){
             steps{
-                sudo systemctl stop chatapp.service
-                rsync -avz $WORKSPACE jenkins@172.17.9.172:/tmp/
-                ssh jenkine@172.17.9.172 "sudo -u chatapp /usr/local/bin/cicd.sh"
-                sudp systemctl start chatapp.service
+                script{
+                    sh '''
+                        sudo systemctl stop chatapp.service
+                        rsync -avz $WORKSPACE jenkins@172.17.9.172:/tmp/
+                        ssh jenkine@172.17.9.172 "sudo -u chatapp /usr/local/bin/cicd.sh"
+                        sudo systemctl start chatapp.service
+                    '''
+                }
             }
         }
     }
