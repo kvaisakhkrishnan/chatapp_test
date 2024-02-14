@@ -106,7 +106,7 @@ DATABASES = {
 'NAME': os.environ.get('CHATDB'),
 'USER': os.environ.get('CHATDBUSER'),
 'PASSWORD': os.environ.get('CHATDBPASSWORD'),
-'HOST': os.environ.get('CHATDBHOST'),
+'HOST': mysql-databse-link,
 'PORT': '3306',
 }
 }
